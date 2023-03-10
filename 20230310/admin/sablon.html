@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../cssek/footer.css">
+<link rel="stylesheet" href="../cssek/alap.css">
+<link rel="stylesheet" href="../cssek/redactor.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../script/jquery-1.9.0.min.js"></script>
+<script src="../script/redactor.min.js"></script>
+<link rel="shortcut icon" href="../kepek/logo2.png" type="image/x-icon">
+<title>Admin műveletek</title>
+<script>
+$(document).ready(
+	function() {
+		$('textarea#tartalom').redactor({
+			minHeight: 300,
+			imageUpload: 'kepfeltoltes.php',
+		});
+	}
+);
+</script>
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+	<header id="fejlec">
+		<h1>Cikkek felvitele</h1>
+	</header>
+
+<div id="befoglalo">
+
+
+	<nav id="menu">
+		{{menu}}
+	</nav>
+	<main id="tartalom">
+		{{tartalom}}
+	</main>
+	<aside id="oldalsav">
+		{{oldalsav}}
+	</aside>
+
+</div>
+
+ <footer class="footer adminfooter">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-lg-6">
+				<div class="oszlop1">
+					<div class="logo">
+						<img src="../kepek/logo2.png" class="img-fluid" alt="">
+					</div>
+					<p class="bemutato" id="rolunk">
+						Az R.N. Motorsport News 2023-ban alakult projektmunka céljából. Ha nagyon fasza lesz akkor dől a lé és repülünk fölfelé.
+					</p>
+					<div class="socialLinks" id="elerthetoseg">
+						<ul>
+							<li>
+								<a href="#">
+									<i class="fa fa-facebook-f"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-youtube"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-instagram"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-6">
+				<div class="oszlop2">
+					<h5>
+						Legutóbbi híreink
+					</h5>
+					<div class="media">
+
+						<div class="media-body d-flex align-self-center">
+							<div class="content">
+								<a href="#">
+									<p>
+										Ide lehetne esetleg rakni valamilyen hírt még
+									</p>
+								</a>
+
+							</div>
+						</div>
+					</div>
+					<div class="media">
+
+						<div class="media-body d-flex align-self-center">
+							<div class="content">
+								<a href="#">
+									<p>
+										Ide meg jöhetne a tippjáték ha nagyon kell vagy akarjuk
+									</p>
+								</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 text-center">
+						<p>&copy; Copyright 2023.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+</footer>
+	 
+
+	
+</body>
+</html>
