@@ -1,0 +1,840 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/*Ez a bodynak a formazasa*/
+body,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+/*Nagy befoglaló doboz az alap kép alatt*/
+.fo {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(21, 21, 30);
+  overflow-x: hidden;
+  transform-style: preserve-3d;
+}
+/*Fonti navigácíió a hamburgericonnal meg a címmel együtt*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 3rem;
+}
+/*Mint az előző csak a pozit határozza meg*/
+.menu {
+  max-width: 72rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white
+}
+/*Logonak a formazasa*/
+.logo {
+  font-size: 2.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 4rem;
+}
+
+.logo span {
+  font-weight: 300;
+}
+ /*A három vonal effektek meg minden ami ahhoz kapcsolódik*/
+.hamburger-menu {
+  height: 4rem;
+  width: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+ /*Ez is az előzőhöz tarrtozik*/
+.bar {
+  width: 1.9rem;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: #eee;
+  transition: 0.5s;
+  position: relative;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #eee;
+  transition: 0.5s;
+}
+
+.bar:before {
+  transform: translateY(-9px);
+}
+
+.bar:after {
+  transform: translateY(9px);
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  left: 0;
+  z-index: 5;
+  overflow: hidden;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+/*Header rész háttér és az effekt rajta*/
+header {
+  min-height: 100vh;
+  width: 100%;
+  /* background: url("images/hatter1.png") no-repeat top center / cover; */
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 25%);
+  display: flex;
+  justify-content: center;
+  padding-top:30px;
+}
+/*Belső tartalom a mainen belül*/
+.inner {
+  max-width: 35rem;
+  text-align: center;
+  color: #fff;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2.7rem;
+}
+/*A gomb középen*/
+.btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.8rem;
+  background-color: #1179e7;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+/*Ettől forog az egész*/
+.fo.active .bar {
+  transform: rotate(360deg);
+  background-color: transparent;
+}
+
+.fo.active .bar:before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.fo.active .bar:after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.fo.active .main {
+  animation: main-animation 0.5s ease;
+  cursor: pointer;
+  transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+}
+
+@keyframes main-animation {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+}
+ /*Linkek formázasa vagyis a menüpontok*/
+.links {
+  position: absolute;
+  width: 30%;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.links a {
+  text-decoration: none;
+  color: rgb(229, 27, 0);
+  padding: 0.7rem 0;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: hide 0.5s forwards ease;
+}
+
+.links a:hover {
+  color: #fff;
+}
+
+.fo.active .links a {
+  animation: appear 0.5s forwards ease var(--i);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: 0.5s;
+  background-color: rgb(218, 218, 218);
+}
+
+.shadow.one {
+  z-index: -1;
+  opacity: 0.15;
+}
+
+.shadow.two {
+  z-index: -2;
+  opacity: 0.1;
+}
+
+.fo.active .shadow.one {
+  animation: shadow-one 0.6s ease-out;
+  transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+}
+
+@keyframes shadow-one {
+  0% {
+    transform: translate(0);
+  }
+
+  5% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+
+  100% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+  }
+}
+
+.fo.active .shadow.two {
+  animation: shadow-two 0.6s ease-out;
+  transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+}
+
+@keyframes shadow-two {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+
+  100% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+  }
+}
+
+.fo.active .main:hover + .shadow.one {
+  transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.5);
+}
+
+.fo.active .main:hover {
+  transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.5);
+}
+
+
+
+.kep
+{
+  height: 60px;
+  width: 75px;
+  padding-top: 25px;
+}
+
+
+#proba
+{
+  color: rgb(229, 27, 0);
+}
+
+.kozep
+  {
+    margin: 10% auto;
+    position: absolute;
+      width: 20%;
+      left:40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #141519;
+      padding: 5px;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 5px 10px 20px rgb(24, 24, 24);
+  }
+
+  .kozepbe
+  {
+    margin: 10% auto;
+    position: absolute;
+      width: 20%;
+      left:40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #141519;
+      padding: 5px;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 5px 10px 20px rgb(24, 24, 24);
+  }
+  
+  .belepes {
+    width: 100%;
+    text-align: center;
+    /* padding: 10px; */
+  }
+  
+  .kis {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+.forgotkis
+{
+  width: 100% !important;
+}
+
+  
+  h1
+  {
+      color: white;
+      padding-top: 15px;
+  }
+  
+  .belepes .form {
+    width: 100%;
+    margin: 5px auto;
+    /* margin-top: 50px; */
+  }
+
+
+  .error-msg
+  {
+     background-color: rgb(74, 0, 0);
+     padding: 10px;
+     color:white;
+     text-align: center;
+     border-radius: 5px;
+     width: 70%;
+     margin:  5px auto 0 auto;
+  }
+
+input[type='submit']
+  {
+    width: 70%;
+    margin: auto;
+    background-color: red;
+    color: white;
+  border-radius: 45px;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  border: 1px solid red;
+  }
+input[type='submit']:hover {
+    background-color: #7c1515;
+    border: 1px solid  #7c1515;
+  }
+  
+input[type='email'] {
+    background-color: #22232a;
+            border-radius: 45px;
+    font-size: 15px;
+    height: 45px;
+    border: none;
+    padding-left: 15px;
+    /* width: -webkit-calc(100% - 15px);
+    width: -moz-calc(100% - 15px); */
+    width: calc(100% - 50px);
+    margin-bottom: 10px;
+  }
+input[type='email'][placeholder] {
+    color: #656d79;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  input[type='text'] {
+    background-color: #22232a;
+            border-radius: 45px;
+    font-size: 15px;
+    height: 45px;
+    border: none;
+    padding-left: 15px;
+    /* width: -webkit-calc(100% - 15px);
+    width: -moz-calc(100% - 15px); */
+    width: calc(100% - 50px);
+    margin-bottom: 10px;
+  }
+input[type='text'][placeholder] {
+    color: #656d79;
+    font-size: 15px;
+    font-weight: 500;
+  }
+input[type='password'] {
+    background-color: #22232a;
+            border-radius: 45px;
+    font-size: 15px;
+    height: 45px;
+    border: none;
+    padding-left: 15px;
+    /* width: -webkit-calc(100% - 15px);
+    width: -moz-calc(100% - 15px); */
+    width: calc(100% - 50px);
+    margin-bottom: 10px;
+  }
+input[type='password'][placeholder] {
+    color: #656d79;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+
+  .belepes .elfelejt {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .belepes .vendeg
+  {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  
+  .belepes .elfelejt a:link {
+    color: #616973;
+  }
+  .belepes.elfelejt a:visited {
+    color: #555c65;
+  }
+  
+  .nincs
+  {
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .nincs-bizony 
+  {
+    color: rgb(131, 123, 123);
+  }
+  
+  
+  .regisztracio {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .regisztracio .form {
+    width: 100%;
+    margin: 5px auto;
+  }
+  /* .regisztracio .belep input[type='submit']
+  {
+    width: 70%;
+    margin: auto;
+    background-color: red;
+    color: white;
+  border-radius: 45px;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  border: 1px solid red;
+  }
+  .regisztracio .belep input[type='submit']:hover {
+    background-color: #7c1515;
+    border: 1px solid  #7c1515;
+  }
+  
+  .regisztracio input[type='text'] {
+    background-color: #22232a;
+            border-radius: 45px;
+    font-size: 15px;
+    height: 45px;
+    border: none;
+    padding-left: 15px;
+     width: -webkit-calc(100% - 15px);
+    width: -moz-calc(100% - 15px); 
+    width: calc(100% - 50px);
+    margin-bottom: 10px;
+  }
+  .regisztracio input[type='text'][placeholder] {
+    color: #656d79;
+    font-size: 15px;
+    font-weight: 500;
+  } */
+  .regisztracio .elfelejt {
+    margin-top: 30px;
+    font-size: 14px;
+  }
+  
+  
+  .regisztracio .elfelejt a:link {
+    color: #616973;
+  }
+  .regisztracio.elfelejt a:visited {
+    color: #555c65;
+  }
+  
+  
+  .van
+  {
+    color: white;
+  }
+  
+  .van-bizony
+  {
+    color: rgb(131, 123, 123);
+  }
+  
+  
+    
+  #light{
+    position: relative;
+    top: 50px;
+    z-index: 1;
+  }
+  #lineh1{
+    position: absolute;
+    left: 0;
+    top:25px;
+    height: 10px;
+    background: #ff0000;
+    animation: lineH 4s infinite linear;
+  }
+ 
+  #lineh2{
+    position: absolute;
+    left: 0;
+    top: 125px;
+    height: 10px;
+    background: #e66e0c;
+    animation: lineH 5s 0.5s infinite linear;
+  }
+  #lineh3{
+    position: absolute;
+    left: 0;
+    top: 568px;
+    height: 10px;
+    background: #102c85;
+    animation: lineH 5s 2s infinite linear;
+  }
+  #lineh4{
+    position: absolute;
+    right: 0;
+    top: 341px;
+    height: 10px;
+    background: #09521b;
+    animation: lineH 5s 1s infinite linear;
+  }
+  #lineh5{
+    position: absolute;
+    left: 0;
+    top: 510px;
+    height: 10px;
+    background: #088fdd;
+    animation: lineH 5s 4s infinite linear;
+  }
+  #lineh6{
+    position: absolute;
+    right: 0;
+    top: 454px;
+    height: 10px;
+    background: #141414;
+    animation: lineH 4s 1s infinite linear;
+  }
+  #lineh7{
+    position: absolute;
+    right: 0;
+    top: 719px;
+    height: 10px;
+    background: #7a0404;
+    animation: lineH 4s 0s infinite linear;
+  }
+  .kep1
+  {
+    position: absolute;
+    left: 0;
+    animation: mozog 4s 0s infinite linear;
+    height: 30px;
+    top: -10px;
+  }
+  #lineh8{
+    position: absolute;
+    left: 0;
+    top: 220px;
+    height: 10px;
+    background: #f4f5f5;
+    animation: lineH 4s infinite linear;
+  }
+
+  .kep2
+  {
+    position: absolute;
+    right: 0;
+    animation: mozog2 4s infinite linear;
+    height: 30px;
+    top:-10px;
+    transform: rotateY(180deg);
+  }
+
+  #lineh9{
+    position: absolute;
+    left: 0;
+    top: 404px;
+    height: 10px;
+    background: #110650;
+    animation: lineH 5s 2s infinite linear;
+  }
+  
+
+  #lineh10{
+    position: absolute;
+    right: 0;
+    top: 630px;
+    height: 10px;
+    background: #2f3e5a;
+    animation: lineH 4s 3s infinite linear;
+  }
+  @keyframes lineH{
+    0%{
+      width: 0%;
+    }
+    100%{
+      width: 95%;
+      opacity: 0;
+    }
+  }
+  @keyframes mozog
+  {
+    0%{
+      left:100%;
+    }  
+    100%
+    {
+      left:100%;
+    }
+  }
+
+@keyframes mozog2
+{
+0%{
+  right: 100%;
+}  
+100%
+{
+  right:100%;
+}
+}
+
+        .form p
+        {
+          padding:5px;
+          margin-bottom: 10px;
+        }
+  
+  
+  @media screen and (max-width: 1000px)
+  {
+    .kozep
+    {
+      margin: 25%;
+          width: 50%;
+         position: absolute;
+         z-index: 1;
+         left:0;
+      }
+      .kozepbe
+      {
+        margin: 25%;
+            width: 50%;
+           position: absolute;
+           z-index: 1;
+           left:0;
+        }
+      /* #light
+      {
+        padding: 10% 0;
+      } */
+      #lineh1{
+        position: absolute;
+        left: 0;
+        height: 10px;
+        background: #ff0000;
+        animation: lineH 4s 2s infinite linear;
+      }
+      #lineh2{
+        position: absolute;
+        left: 0;
+        top: 125px;
+        height: 10px;
+        background: #e66e0c;
+        animation: lineH 5s 0.5s infinite linear;
+      }
+      #lineh3{
+        position: absolute;
+        left: 0;
+        top: 568px;
+        height: 10px;
+        background: #102c85;
+        animation: lineH 5s 2s infinite linear;
+      }
+      #lineh4{
+        position: absolute;
+        right: 0;
+        top: 341px;
+        height: 10px;
+        background: #09521b;
+        animation: lineH 5s 1s infinite linear;
+      }
+      #lineh5{
+        position: absolute;
+        left: 0;
+        top: 600px;
+        height: 10px;
+        background: #088fdd;
+        animation: lineH 5s 4s infinite linear;
+      }
+      #lineh6{
+        position: absolute;
+        right: 0;
+        top: 454px;
+        height: 10px;
+        background: #7c7e77;
+        animation: lineH 4s 1s infinite linear;
+      }
+      #lineh7{
+        position: absolute;
+        right: 0;
+        top: 532px;
+        height: 10px;
+        background: #7a0404;
+        animation: lineH 4s 0s infinite linear;
+      }
+      #lineh8{
+        position: absolute;
+        left: 0;
+        top: 220px;
+        height: 10px;
+        background: #f4f5f5;
+        animation: lineH 4s 1.5s infinite linear;
+      }
+      #lineh9{
+        position: absolute;
+        left: 0;
+        top: 404px;
+        height: 10px;
+        background: #110650;
+        animation: lineH 5s 2s infinite linear;
+      }
+      #lineh10{
+        position: absolute;
+        right: 0;
+        top: -19px;
+        height: 10px;
+        background: #2f3e5a;
+        animation: lineH 4s 3s infinite linear;
+      }
+  }
+
+  @media screen and (max-width:600px)
+  {
+    .kozep
+      {
+          margin: 5% 5%;
+          width: 90%;
+         position: absolute;
+         z-index: 1;
+         left:0;
+      }
+      .kozepbe
+      {
+          margin: 35% 5%;
+          width: 90%;
+         position: absolute;
+         z-index: 1;
+         left:0;
+      }
+      .navbar
+      {
+        display: none;
+      }
+  }
