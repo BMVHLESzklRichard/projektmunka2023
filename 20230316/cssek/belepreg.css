@@ -1,0 +1,411 @@
+
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900);
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  input {
+    outline: none;
+  }
+  html,
+  body {  
+    font-family: 'Roboto', sans-serif;
+    background: #27292e;
+  }
+  .kozep
+  {
+    margin: 10% auto;
+    position: absolute;
+      width: 20%;
+      left:40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #141519;
+      padding: 5px;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 5px 10px 20px rgb(62, 62, 62);
+  }
+  
+  .belepes {
+    width: 100%;
+    text-align: center;
+    /* padding: 10px; */
+  }
+  
+  .kis {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  h1
+  {
+      color: white;
+      
+      padding-top: 15px;
+  }
+  
+  .belepes .form {
+    width: 100%;
+    margin: 5px auto;
+    /* margin-top: 50px; */
+  }
+
+
+  .error-msg
+  {
+     background-color: rgb(74, 0, 0);
+     padding: 10px;
+     color:white;
+     text-align: center;
+     border-radius: 5px;
+     width: 70%;
+     margin:  5px auto 0 auto;
+  }
+
+input[type='submit']
+  {
+    width: 70%;
+    margin: auto;
+    background-color: red;
+    color: white;
+  border-radius: 45px;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  border: 1px solid red;
+  }
+input[type='submit']:hover {
+    background-color: #7c1515;
+    border: 1px solid  #7c1515;
+  }
+  
+input[type='text'] {
+    background-color: #22232a;
+            border-radius: 45px;
+    font-size: 15px;
+    height: 45px;
+    border: none;
+    padding-left: 15px;
+    /* width: -webkit-calc(100% - 15px);
+    width: -moz-calc(100% - 15px); */
+    width: calc(100% - 50px);
+    margin-bottom: 10px;
+  }
+input[type='text'][placeholder] {
+    color: #656d79;
+    font-size: 15px;
+    font-weight: 500;
+  }
+input[type='password'] {
+    background-color: #22232a;
+            border-radius: 45px;
+    font-size: 15px;
+    height: 45px;
+    border: none;
+    padding-left: 15px;
+    /* width: -webkit-calc(100% - 15px);
+    width: -moz-calc(100% - 15px); */
+    width: calc(100% - 50px);
+    margin-bottom: 10px;
+  }
+input[type='password'][placeholder] {
+    color: #656d79;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+
+  .belepes .elfelejt {
+    margin-top: 30px;
+    font-size: 14px;
+  }
+  
+  
+  .belepes .elfelejt a:link {
+    color: #616973;
+  }
+  .belepes.elfelejt a:visited {
+    color: #555c65;
+  }
+  
+  .nincs
+  {
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .nincs-bizony 
+  {
+    color: rgb(131, 123, 123);
+  }
+  
+  
+  .regisztracio {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .regisztracio .form {
+    width: 100%;
+    margin: 5px auto;
+  }
+  /* .regisztracio .belep input[type='submit']
+  {
+    width: 70%;
+    margin: auto;
+    background-color: red;
+    color: white;
+  border-radius: 45px;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  border: 1px solid red;
+  }
+  .regisztracio .belep input[type='submit']:hover {
+    background-color: #7c1515;
+    border: 1px solid  #7c1515;
+  }
+  
+  .regisztracio input[type='text'] {
+    background-color: #22232a;
+            border-radius: 45px;
+    font-size: 15px;
+    height: 45px;
+    border: none;
+    padding-left: 15px;
+     width: -webkit-calc(100% - 15px);
+    width: -moz-calc(100% - 15px); 
+    width: calc(100% - 50px);
+    margin-bottom: 10px;
+  }
+  .regisztracio input[type='text'][placeholder] {
+    color: #656d79;
+    font-size: 15px;
+    font-weight: 500;
+  } */
+  .regisztracio .elfelejt {
+    margin-top: 30px;
+    font-size: 14px;
+  }
+  
+  
+  .regisztracio .elfelejt a:link {
+    color: #616973;
+  }
+  .regisztracio.elfelejt a:visited {
+    color: #555c65;
+  }
+  
+  
+  .van
+  {
+    color: white;
+  }
+  
+  .van-bizony
+  {
+    color: rgb(131, 123, 123);
+  }
+  
+  
+    
+  #light{
+    position: relative;
+    top: 50px;
+    z-index: 1;
+  }
+  #lineh1{
+    position: absolute;
+    left: 0;
+    height: 10px;
+    background: #ff0000;
+    animation: lineH 4s 2s infinite linear;
+  }
+  #lineh2{
+    position: absolute;
+    left: 0;
+    top: 125px;
+    height: 10px;
+    background: #e66e0c;
+    animation: lineH 5s 0.5s infinite linear;
+  }
+  #lineh3{
+    position: absolute;
+    left: 0;
+    top: 568px;
+    height: 10px;
+    background: #102c85;
+    animation: lineH 5s 2s infinite linear;
+  }
+  #lineh4{
+    position: absolute;
+    right: 0;
+    top: 341px;
+    height: 10px;
+    background: #09521b;
+    animation: lineH 5s 1s infinite linear;
+  }
+  #lineh5{
+    position: absolute;
+    left: 0;
+    top: 510px;
+    height: 10px;
+    background: #088fdd;
+    animation: lineH 5s 4s infinite linear;
+  }
+  #lineh6{
+    position: absolute;
+    right: 0;
+    top: 454px;
+    height: 10px;
+    background: #7c7e77;
+    animation: lineH 4s 1s infinite linear;
+  }
+  #lineh7{
+    position: absolute;
+    right: 0;
+    top: 689px;
+    height: 10px;
+    background: #7a0404;
+    animation: lineH 4s 0s infinite linear;
+  }
+  #lineh8{
+    position: absolute;
+    left: 0;
+    top: 220px;
+    height: 10px;
+    background: #f4f5f5;
+    animation: lineH 4s 1.5s infinite linear;
+  }
+  #lineh9{
+    position: absolute;
+    left: 0;
+    top: 404px;
+    height: 10px;
+    background: #110650;
+    animation: lineH 5s 2s infinite linear;
+  }
+  #lineh10{
+    position: absolute;
+    right: 0;
+    top: 630px;
+    height: 10px;
+    background: #2f3e5a;
+    animation: lineH 4s 3s infinite linear;
+  }
+  @keyframes lineH{
+    0%{
+      width: 0%;
+    }
+    100%{
+      width: 95%;opacity: 0;
+    }
+  }
+    
+  
+  @media screen and (max-width: 900px)
+  {
+      body
+      {
+          height: 70vh;
+      }    
+      .kozep
+      {
+          margin: 25% 4%;
+          width: 90%;
+         position: absolute;
+         z-index: 1;
+         left:0;
+      }
+      #light
+      {
+        padding: 10% 0;
+      }
+      #lineh1{
+        position: absolute;
+        left: 0;
+        height: 10px;
+        background: #ff0000;
+        animation: lineH 4s 2s infinite linear;
+      }
+      #lineh2{
+        position: absolute;
+        left: 0;
+        top: 125px;
+        height: 10px;
+        background: #e66e0c;
+        animation: lineH 5s 0.5s infinite linear;
+      }
+      #lineh3{
+        position: absolute;
+        left: 0;
+        top: 568px;
+        height: 10px;
+        background: #102c85;
+        animation: lineH 5s 2s infinite linear;
+      }
+      #lineh4{
+        position: absolute;
+        right: 0;
+        top: 341px;
+        height: 10px;
+        background: #09521b;
+        animation: lineH 5s 1s infinite linear;
+      }
+      #lineh5{
+        position: absolute;
+        left: 0;
+        top: 600px;
+        height: 10px;
+        background: #088fdd;
+        animation: lineH 5s 4s infinite linear;
+      }
+      #lineh6{
+        position: absolute;
+        right: 0;
+        top: 454px;
+        height: 10px;
+        background: #7c7e77;
+        animation: lineH 4s 1s infinite linear;
+      }
+      #lineh7{
+        position: absolute;
+        right: 0;
+        top: 532px;
+        height: 10px;
+        background: #7a0404;
+        animation: lineH 4s 0s infinite linear;
+      }
+      #lineh8{
+        position: absolute;
+        left: 0;
+        top: 220px;
+        height: 10px;
+        background: #f4f5f5;
+        animation: lineH 4s 1.5s infinite linear;
+      }
+      #lineh9{
+        position: absolute;
+        left: 0;
+        top: 404px;
+        height: 10px;
+        background: #110650;
+        animation: lineH 5s 2s infinite linear;
+      }
+      #lineh10{
+        position: absolute;
+        right: 0;
+        top: -19px;
+        height: 10px;
+        background: #2f3e5a;
+        animation: lineH 4s 3s infinite linear;
+      }
+  }
