@@ -30,6 +30,7 @@ $tablazat = "<p id=\"fel\"><a href=\"tartalomletrehozas.php\"><i class=\"materia
     {
       $fohire = ($sor["fohir"] == '1' ? "Főhír": "Kis hír");
       $elerhetoe = ($sor["statusz" ]== '1' ? "Elérhető" : "Nem elérhető");
+      $id = $sor["id"];
         $tablazat.="<tr>
                        <td>{$sor["alias"]}</td>
                        <td>{$sor["cim"]}</td>
