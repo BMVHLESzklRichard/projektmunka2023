@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .chatUzenetek {
+            padding: 0;
+            overflow-y: auto;
+            height: calc(80vh - 220px);
+        }
+
+        .active {}
+    </style>
+    <link rel="stylesheet" href="../../cssek/footer.css">
+    <link rel="stylesheet" href="../../cssek/stilus.css" id="stilus2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{leiras}}">
+    <meta name="keywords" content="{{kulcsszavak}}">
+    <link rel="shortcut icon" href="../../kepek/logo2.png" type="image/x-icon">
+    <title>{{cim}}</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <i class='bx bx-menu'></i>
+            <div class="logo"><a href="../user.php"><img src="../../kepek/ujlogo.png" alt="" class="logonk"></a>
+            </div>
+            <div class="nav-links" id="navkis">
+                <div class="sidebar-logo">
+                    <span class="logo-name">R.N.</span>
+                    <div class="felhasznalokis" id="kivanbent" onclick="userjelen()">
+                        <div class="kepbutton">
+                            <img src="../../kpes/{{userfoto}}">
+                            <div class="felnev">{{kivanbent}}</div>
+
+                        </div>
+                    </div>
+                    <i class='bx bx-x'></i>
+                </div>
+                <ul class="links">
+                    <li><a href="../user.php"><span class="hu">Főoldal</span>
+                        <span class="en">Home page</span></a></li>
+                    <li id="menetelem">
+                        <a href="../teljes.php" id="menetrend"><span class="hu">Menetrend</span>
+                            <span class="en">Schedule</span></a>
+                        <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                    </li>
+                    <li id="tabellaelem">
+                        <a href="../teljestabella.php"><span class="hu">Tabellák</span>
+                            <span class="en">Standings</span></a>
+                        <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                    </li>
+                    <li><a href="#rolunk"><span class="hu">Rólunk</span>
+                        <span class="en">About Us</span></a></li>
+                    <li><a href="#elerthetoseg"><span class="hu">Elérhetőségeink</span>
+                        <span class="en">Contact Us</span></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="kommentgomb" onclick="kommentjelen()">
+                    <img src="../../kepek/messagelogo.jpg" alt="messagelogo">
+                       <div class="pontok">
+                        <svg height="20" width="20">
+                            <circle cx="10" cy="10" r="5" stroke="black" stroke-width="3" fill="black" id="elsole" class="nincspop"/>
+                          </svg>
+                          <svg height="20" width="20">
+                            <circle cx="10" cy="10" r="5" stroke="black" stroke-width="3" fill="black" id="elsofel" class="nincspopfel"/>
+                          </svg>
+                          <svg height="20" width="20">
+                            <circle cx="10" cy="10" r="5" stroke="black" stroke-width="3" fill="black" id="masodikle" class="nincspop"/>
+                          </svg>
+                       </div>
+                 </div>
+            </div>
+            <div class="felhasznalo" onclick="userjelen()">
+                <div class="kepbutton">
+                    <a href="#top">
+                        <img src="../../kpes/{{userfoto}}">
+                    </a>
+                    <div class="felnev">
+                        {{kivanbent}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="almenu" id="almenuu">
+            <div class="alalmenu">
+                <div class="felirat">
+                    <h2> <a href="../teljes.php"> <span class="hu">Teljes Menetrend</span>
+                        <span class="en">Full Schedule</span></a></h2>
+                </div>
+
+                {{futammenu}}
+
+            </div>
+        </div>
+        <div class="almenu2" id="almenuu2">
+            <div class="alalmenu">
+                <div class="felirat">
+                    <h2> <a href="../teljestabella.php"> <span class="hu">Tabellák</span>
+                        <span class="en">Standings</span></a></h2>
+                </div>
+                {{tabellamenu}}
+            </div>
+        </div>
+        <div class="nincskomment" id="nincskom">
+            <h3 class="cimeakommentnek">Hozzászólások</h3>
+            <div class="kommentsection" id="irdkomment">
+            <div class="comment chatUzenetek" id="comment"></div>
+            {{hozzaszolas}}
+            </div>
+        </div>
+    </nav>
+    <div class="displéj" id="adat">
+        <div class="useradatok">
+            <div class="adatokelso">
+                <div class="kepesnev">
+                    <div class="belsokep">
+                        <h3><span class="hu">Felhasználónév</span>
+                            <span class="en">Username</span></h3>
+                        <div class="nembaj">
+                            <div class="bskep" id="bs">
+                                <img src="../../kpes/{{userfoto}}">
+                            </div>
+                            <div class="bsszoveg">
+                                {{kivanbent}}
+                            </div>
+                        </div>
+                        <div class="valtoztatas">
+                            {{kepcsere}}
+                            </div>
+                    </div>
+                    <div class="belsofelhasznalo">
+                        <h3><span class="hu">Jogosultság</span>
+                            <span class="en">Permission</span></h3>
+                        <p class="felnev">
+                            {{permission}}
+                        </p>
+                    </div>
+    
+                </div>
+                <div class="beallitasok">
+                    <h3><span class="hu">Beállítások</span>
+                        <span class="en">Settings</span></h3>
+                    <div class="beallitasokkis">
+                        <div class="csusz">
+                            <p><span class="hu">Sötét mód</span>
+                                <span class="en">Dark mode</span></p>
+                            <label class="switch">
+                                <input type="checkbox" onclick="ToggleMode()" id="dark-mode">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="nyelvcs">
+                            <p>
+                                <span class="hu">Nyelv:</span>
+                                <span class="en">Language:</span>
+                                </p>
+                                <button onclick="Changelang()">
+                                <span class="hu"><img src="../../kepek/uk-flag.gif" alt="earth" class="langkep"></span>
+                                <span class="en"><img src="../../kepek/hu-flag.gif" alt="earth" class="langkep"></span>
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                {{admin}}
+            </div>
+            <div class="bezarkep" onclick="userjelen()">
+                <img src="../../kepek/iksz.png" alt="x">
+              </div>
+        </div>
+    </div>
+    <div class="fogridhir">
+        <div>
+            <h1>{{cim}}</h1>
+            <hr style="background-color: red;">
+        </div>
+        <div class="tart">{{tartalom}}
+        </div>
+        <p>Készítette: {{iro}} <img class="uzenetkep" src="../../kpes/{{foto}}" alt="jash"></p>
+        <p>Létrehozás dátuma: {{letrehozas}}</p>
+        {{utolsoiro}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+    <script src="../../script/komment.js"></script>
+    <script src="../../script/java.js"></script>
+    <script src="../../script/hirdarkmode.js "></script>
+</body>
+
+</html>
