@@ -1,0 +1,53 @@
+*
+{
+    margin:0;
+    padding: 0;
+}
+
+.csere
+{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    height: 100vh;
+}
+
+.hun
+{
+    grid-area: 1/1;
+    background-image: url("../kepek/bp.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1
+{
+    text-align: center;
+}
+
+
+.eng
+{
+    grid-area: 1/2;
+    background-image: url("../kepek/londo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kepm
+{
+    width: 100%;
+}
+
+.kepm img
+{
+    width: 100%;
+}
