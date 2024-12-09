@@ -1,0 +1,889 @@
+/* palyaResult */
+/* ---------------------------------------- */
+.trackResult {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 33rem auto;
+  margin: 90px auto 0 auto;
+  gap: 35px;
+  justify-items: center;
+}
+
+.trackList {
+  border: 4px solid var(--red);
+  background-color: #0f1019;
+  width: 70rem;
+}
+
+.trackList p {
+  padding: 0;
+  margin: 0;
+}
+
+.trackList span {
+  text-transform: uppercase;
+}
+
+.fastestColor {
+  color: purple;
+}
+
+.trackList ul li .driverLi {
+  display: grid;
+  grid-template-columns: 3.5rem 8rem 10rem 25rem 7rem;
+  border: 1px solid var(--red);
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  padding: 10px;
+}
+
+.driverLi .driverLiFlag {
+  grid-area: 1/1;
+}
+
+.driverLi .driverLiIMG {
+  grid-area: 1/2;
+}
+
+.driverLi .driverLiName {
+  grid-area: 1/3;
+}
+
+.driverLi .driverLiTeamName {
+  grid-area: 1/4;
+}
+
+.driverLi .driverLiPosition {
+  grid-area: 1/5;
+  display: flex;
+  gap: 5px;
+}
+
+.driverLi .driverLiPosition3
+  {
+    grid-area: 1 / 5;
+    display: grid;
+    grid-template-columns: 29% 30% 21%;
+    gap: 12px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+  }
+
+.driverLi .driverLiIMG img,
+.driverLiFlag img {
+  width: 100%;
+}
+
+/*sportMain*/
+/*---------------------------------------------------------------------*/
+.mainSport {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  margin: 90px auto 0 auto;
+  gap: 35px;
+  justify-items: center;
+}
+
+.mainSport .carousel,
+.trackResult .carousel {
+  width: 80%;
+  /* height: 33rem; */
+  height: auto;
+  display: grid;
+  grid-template-rows: 1.5rem auto;
+  grid-template-columns: 1.5rem auto 1.5rem;
+  grid-template-areas:
+    "topP topP topP"
+    "leftP centerP rightP";
+}
+
+.mainSport .carousel .carousel-inner,
+.trackResult .carousel .carousel-inner {
+  height: auto;
+  /* height: 31.5rem; */
+}
+
+.mainSport .carousel .carousel-inner .carousel-item,
+.trackResult .carousel .carousel-inner .carousel-item {
+  /* max-height: 31.5rem !important; */
+  height: auto;
+  max-height: none !important;
+}
+
+.mainPodium {
+  grid-area: 1/1;
+  width: 100%;
+  height: auto;
+}
+
+.podium {
+  grid-area: centerP;
+  display: grid;
+  grid-auto-rows: auto;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  /* height: 31.5rem; */
+  height: 100%;
+  justify-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.podiumCountryFlag {
+  position: fixed;
+  top: -36px;
+  left: -76px;
+  width: 428px;
+  height: 295px;
+  z-index: -5;
+  border: 2px solid black;
+  transform: rotateZ(322deg);
+  opacity: 0.7;
+}
+
+.podiumCountryScene
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  opacity: 0.7;
+  z-index: -5;
+  width: 100%;
+  height: 40%;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+.podiumCountryScene::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; /* A fade-out magasságának beállítása */
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.confetticanvas {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.confettibottle {
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  width: 5%;
+  z-index: 10;
+}
+
+.confettibottle:hover {
+  cursor: pointer;
+}
+
+.confettiNo {
+  display: block !important;
+}
+
+#champagneBottle:hover {
+  cursor: pointer;
+}
+
+.podiumTitle {
+  margin-top: 5px;
+  display: grid;
+  gap: 10px;
+  color: white;
+  width: 50%;
+  grid-template-columns: 45% 55%;
+  align-items: center;
+}
+
+.podiumTitle h4 {
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: 5px solid var(--red);
+  border-bottom: none;
+  border-left: none;
+  padding: 5px 10px;
+  font-size: 1.3rem;
+}
+
+.podiumTitle img {
+  width: 100%;
+}
+
+.bahrainPodium {
+  animation: bahrainPodbgc 5s infinite;
+}
+
+@keyframes bahrainPodbgc {
+  0% {
+    background-color: #363b72;
+  }
+
+  50% {
+    background-color: #243698;
+  }
+
+  100% {
+    background-color: #363b72;
+  }
+}
+
+.saudiPodium {
+  animation: saudiPodbgc 8s infinite;
+}
+
+@keyframes saudiPodbgc {
+  0% {
+    background-color: #3647d8;
+  }
+
+  50% {
+    background-color: #c068e4;
+  }
+
+  100% {
+    background-color: #3647d8;
+  }
+}
+
+.australiaPodium {
+  animation: australiaPodbgc 5s infinite;
+}
+
+@keyframes australiaPodbgc {
+  0% {
+    background-color: #0c6938;
+  }
+
+  50% {
+    background-color: #0a592f;
+  }
+
+  100% {
+    background-color: #0c6938;
+  }
+}
+
+.japanPodium {
+  animation: japanPodbgc 5s infinite;
+}
+
+@keyframes japanPodbgc {
+  0% {
+    background-color: #ac5687;
+  }
+
+  50% {
+    background-color: #874e63;
+  }
+
+  100% {
+    background-color: #ac5687;
+  }
+}
+
+.kinaPodium {
+  animation: kinaPodbgc 5s infinite;
+}
+
+@keyframes kinaPodbgc {
+  0% {
+    background-color: #0c6938;
+  }
+
+  50% {
+    background-color: #0a592f;
+  }
+
+  100% {
+    background-color: #0c6938;
+  }
+}
+
+.miamiPodium {
+  animation: miamiPodbgc 5s infinite;
+}
+
+@keyframes miamiPodbgc {
+  0% {
+    background-color: #3b8f9f;
+  }
+
+  50% {
+    background-color: #15387c;
+  }
+
+  100% {
+    background-color: #3b8f9f;
+  }
+}
+
+.imolaPodium {
+  animation: imolaPodbgc 5s infinite;
+}
+
+@keyframes imolaPodbgc {
+  0% {
+    background-color: #0c6938;
+  }
+
+  50% {
+    background-color: #0a592f;
+  }
+
+  100% {
+    background-color: #0c6938;
+  }
+}
+
+.monacoPodium {
+  animation: monacoPodbgc 5s infinite;
+}
+
+@keyframes monacoPodbgc {
+  0% {
+    background-color: #64524b;
+  }
+
+  50% {
+    background-color: #6c594f;
+  }
+
+  100% {
+    background-color: #64524b;
+  }
+}
+
+.canadaPodium {
+  animation: canadaPodbgc 5s infinite;
+}
+
+@keyframes canadaPodbgc {
+  0% {
+    background-color: #2d2a27;
+  }
+
+  50% {
+    background-color: #211e1c;
+  }
+
+  100% {
+    background-color: #2d2a27;
+  }
+}
+
+.spainPodium {
+  animation: spainPodbgc 5s infinite;
+}
+
+@keyframes spainPodbgc {
+  0% {
+    background-color: #3f46ba;
+  }
+
+  50% {
+    background-color: #6b65b1;
+  }
+
+  100% {
+    background-color: #3f46ba;
+  }
+}
+
+.austriaPodium {
+  animation: austriaPodbgc 5s infinite;
+}
+
+@keyframes austriaPodbgc {
+  0% {
+    background-color: #0c6938;
+  }
+
+  50% {
+    background-color: #0a592f;
+  }
+
+  100% {
+    background-color: #0c6938;
+  }
+}
+
+.ukPodium {
+  animation: ukPodbgc 5s infinite;
+}
+
+@keyframes ukPodbgc {
+  0% {
+    background-color: #58a27a;
+  }
+
+  50% {
+    background-color: #4493bf;
+  }
+
+  100% {
+    background-color: #58a27a;
+  }
+}
+
+.hungaryPodium {
+  animation: hungaryPodbgc 5s infinite;
+}
+
+@keyframes hungaryPodbgc {
+  0% {
+    background-color: #504043;
+  }
+
+  50% {
+    background-color: #543b42;
+  }
+
+  100% {
+    background-color: #504043;
+  }
+}
+
+.belgiumPodium {
+  animation: belgiumPodbgc 5s infinite;
+}
+
+@keyframes belgiumPodbgc {
+  0% {
+    background-color: #303030;
+  }
+
+  50% {
+    background-color: #2f2f36;
+  }
+
+  100% {
+    background-color: #303030;
+  }
+}
+
+.netherlandsPodium {
+  animation: netherlandsPodbgc 5s infinite;
+}
+
+@keyframes netherlandsPodbgc {
+  0% {
+    background-color: #27a75e;
+  }
+
+  50% {
+    background-color: #15b059;
+  }
+
+  100% {
+    background-color: #27a75e;
+  }
+}
+
+.italyPodium {
+  animation: italyPodbgc 5s infinite;
+}
+
+@keyframes italyPodbgc {
+  0% {
+    background-color: #4e2238;
+  }
+
+  50% {
+    background-color: #362d37;
+  }
+
+  100% {
+    background-color: #4e2238;
+  }
+}
+
+.bakuPodium {
+  animation: bakuPodbgc 5s infinite;
+}
+
+@keyframes bakuPodbgc {
+  0% {
+    background-color: #57555b;
+  }
+
+  50% {
+    background-color: #46434c;
+  }
+
+  100% {
+    background-color: #57555b;
+  }
+}
+
+.singaporePodium {
+  animation: singaporePodbgc 5s infinite;
+}
+
+@keyframes singaporePodbgc {
+  0% {
+    background-color: #1261ff;
+  }
+
+  50% {
+    background-color: #24a5da;
+  }
+
+  100% {
+    background-color: #1261ff;
+  }
+}
+
+.usaPodium {
+  animation: usaPodbgc 5s infinite;
+}
+
+@keyframes usaPodbgc {
+  0% {
+    background-color: #655965;
+  }
+
+  50% {
+    background-color: #5f4b4e;
+  }
+
+  100% {
+    background-color: #655965;
+  }
+}
+
+.mexicoPodium {
+  animation: mexicoPodbgc 5s infinite;
+}
+
+@keyframes mexicoPodbgc {
+  0% {
+    background-color: #505549;
+  }
+
+  50% {
+    background-color: #445546;
+  }
+
+  100% {
+    background-color: #505549;
+  }
+}
+
+.brazilPodium {
+  animation: brazilPodbgc 5s infinite;
+}
+
+@keyframes brazilPodbgc {
+  0% {
+    background-color: #084430;
+  }
+
+  50% {
+    background-color: #699687;
+  }
+
+  100% {
+    background-color: #084430;
+  }
+}
+
+.lasvegasPodium {
+  animation: lasvegasPodbgc 5s infinite;
+}
+
+@keyframes lasvegasPodbgc {
+  0% {
+    background-color: #260a0c;
+  }
+
+  50% {
+    background-color: #1d0d11;
+  }
+
+  100% {
+    background-color: #260a0c;
+  }
+}
+
+.qatarPodium {
+  animation: qatarPodbgc 10s infinite;
+}
+
+@keyframes qatarPodbgc {
+  0% {
+    background-color: #f34fc6;
+  }
+
+  50% {
+    background-color: #d70b17;
+  }
+
+  100% {
+    background-color: #f34fc6;
+  }
+}
+
+.abudhabiPodium {
+  animation: abudhabiPodbgc 5s infinite;
+}
+
+@keyframes abudhabiPodbgc {
+  0% {
+    background-color: #2f1212;
+  }
+
+  50% {
+    background-color: #4c0a0d;
+  }
+
+  100% {
+    background-color: #2f1212;
+  }
+}
+
+
+.podiumLine {
+  background-color: var(--black);
+}
+
+.podiumLineUp {
+  background-color: var(--black);
+}
+
+#upLine {
+  grid-area: topP;
+  border: 5px solid rgb(36, 36, 36);
+  border-bottom: none;
+}
+
+#leftLine {
+  grid-area: leftP;
+  border-left: 5px solid rgb(36, 36, 36);
+}
+
+#rightLine {
+  grid-area: rightP;
+  border-right: 5px solid rgb(36, 36, 36);
+}
+
+.podiumStairs {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  /* gap:20px; */
+}
+
+.podStair {
+  background-color: rgb(110 110 110);
+  height: 50px;
+  width: 100%;
+  border: 3px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.podStair .podiumPont
+{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: smaller;
+}
+
+.podStair .driverLiPosition3
+{
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  width: 14%;
+}
+
+
+.pods {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 33%;
+  gap: 35px;
+}
+
+.firstPod .podStair {
+  height: 5rem;
+  border-radius: 10px 10px 0 0;
+  border-top: 3px solid #D4AF37;
+  /* transform: translateY(-35px); */
+}
+
+.secondPod .podStair {
+  height: 3rem;
+  border-top: 3px solid #888888;
+  border-radius: 10px 0 0 10px;
+}
+
+.thirdPod .podStair {
+  border-radius: 0 10px 10px 0;
+  border-top: 3px solid #B08D57;
+  height: 2.5rem;
+}
+
+.podIMGFlag {
+  display: flex;
+  justify-content: center;
+  width: 35%;
+}
+
+.podIMGFlag img {
+  width: 100%;
+  border: 3px solid black;
+}
+
+.podIMGDriver {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.podIMGDriver img {
+  width: 85%;
+  border: 3px solid black;
+}
+
+@media (max-width: 59rem) {
+
+  .mainSport {
+    grid-template-rows: 30rem 35rem;
+  }
+
+  .trackResult
+  {
+    width: 100%;
+    padding: 0;
+    margin: 90px 0 0 0;
+  }
+
+  .mainSport .carousel, .trackResult .carousel {
+    margin: 0;
+    max-height: none;
+    width: 100%;
+    height: 30rem;
+  }
+
+  .podium {
+    grid-template-rows: 8rem 17rem;
+    height: 29rem;
+  }
+
+  .podiumTitle {
+    width: 60%;
+  }
+
+  .podiumTitle h4 {
+    font-size: 0.8rem;
+  }
+
+  .trackList
+  {
+    width: 100%;
+  }
+
+  .trackList ul li .driverLi {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    padding: 3px;
+    gap:10px;
+  }
+  
+  .driverLi .driverLiFlag {
+    grid-area: 1/1;
+    width: 15%;
+  }
+  
+  .driverLi .driverLiIMG {
+    grid-area: 2/1;
+    width: 40%;
+  }
+  
+  .driverLi .driverLiName {
+    grid-area: 3/1;
+  }
+  
+  .driverLi .driverLiTeamName {
+    grid-area: 4/1;
+    text-align: center;
+  }
+  
+  .driverLi .driverLiPosition {
+    grid-area: 5/1;
+    display: flex;
+    gap: 5px;
+  }
+
+  .driverLi .driverLiPosition3
+  {
+    grid-area: 5 / 1;
+    display: grid;
+    grid-template-columns: 12% 16% 10%;
+    gap: 5px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+  }
+  
+  .driverLi .driverLiIMG img,
+  .driverLiFlag img {
+    width: 100%;
+  }
+}
+
+/* mainSport */
+
+.mainSport {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+
+
+  .mainSport .carousel .carousel-inner {
+    height: 28.5rem;
+  }
+
+  .podium {
+    grid-template-rows: 8rem 20rem;
+    height: 29rem;
+  }
+
+  .podiumTitle {
+    width: 80%;
+  }
+
+  .podiumStairs {
+    width: 90%;
+  }
+
+  .nextRaceClock {
+    width: 90%;
+  }
+}

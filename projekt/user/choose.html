@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link rel="stylesheet" href="../cssek/footer.css"> -->
+    <link rel="stylesheet" href="../cssek/stilus.css" id="stilus">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        .chooseContent {
+            /* display: grid;
+            grid-template-columns: 55% 45%; */
+            display: block;
+            height: 100%;
+            background-color: rgb(79, 16, 16);
+            padding: 10px;
+            position: relative;
+        }
+
+        .chooseContent a {
+            color: white;
+        }
+
+        .formula1Content img {
+            width: 100%;
+        }
+
+        .newsContent {
+            color: #fff;
+            /* display: inline-block; */
+            /* margin: 8px; */
+            overflow: hidden;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            width: 53%;
+            /* width: 50rem; */
+            height: 46rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+        }
+
+        .newsContent img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            max-width: 100%;
+            backface-visibility: hidden;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+        }
+
+        .formula1Content {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            bottom: 10px;
+            width: 53%;
+            /* width: 50rem; */
+            height: 46rem;
+            clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .formula1Content img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            max-width: 100%;
+            backface-visibility: hidden;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .chooseLine {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-10%);
+            width: 20px;
+            height: 100%;
+            /* background-color: rgb(149, 48, 48); */
+            background-color: rgb(79, 16, 16);
+            transform-origin: center;
+            /* transform: rotate(10deg); */
+            z-index: 2;
+        }
+
+
+
+        .chooseContent figcaption {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            align-items: center;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            line-height: 1.1em;
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.578);
+            z-index: 2;
+            transition-delay: 0.1s;
+            font-size: 2rem;
+            font-family: sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+        }
+
+        .newsContent:hover::before,
+        .newsContent:hover::after {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+
+        .newsContent:hover>img {
+            opacity: 0.7;
+        }
+
+        .newsContent:hover a {
+            color: red;
+        }
+
+        .newsContent:hover figcaption {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.759);
+        }
+
+        .formula1Content figcaption {
+            background-color: rgba(0, 0, 0, 0.336);
+        }
+
+        .formula1Content:hover::before,
+        .formula1Content:hover::after {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+
+        .formula1Content:hover>img {
+            opacity: 0.7;
+        }
+
+        .formula1Content:hover a {
+            color: red;
+        }
+
+        .formula1Content:hover figcaption {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.521);
+        }
+
+        @media screen and (max-width: 70rem) {
+            .chooseContent {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(2, 50%);
+            }
+
+            .newsContent {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                grid-area: 1/1;
+                position: relative;
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                clip-path: none;
+            }
+
+
+            .formula1Content {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                grid-area: 2/1;
+                position: relative;
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                clip-path: none;
+            }
+
+
+            .newsContent img,
+            .formula1Content img {
+                width: 100%;
+                height: 33rem;
+                overflow: hidden;
+                max-width: 100%;
+                clip-path: none;
+            }
+
+
+            .chooseContent figcaption {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                align-items: center;
+                z-index: 1;
+                line-height: 1.1em;
+                opacity: 1;
+                background-color: rgba(0, 0, 0, 0.578);
+                z-index: 2;
+                clip-path: none;
+            }
+
+            .chooseLine {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: translateX(0%) !important;
+                width: 20px;
+                height: 100%;
+                /* background-color: rgb(149, 48, 48); */
+                background-color: rgb(79, 16, 16);
+                transform-origin: center;
+                /* transform: rotate(10deg); */
+                z-index: 2;
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chooseContent">
+        <div class="newsContent">
+            <a href="felhasznaloiFelulet/user.php">
+                <img src="https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg" alt="">
+                <figcaption>Hírek</figcaption>
+            </a>
+        </div>
+        <div class="chooseLine" id="rotatableLine">
+            <hr>
+        </div>
+        <div class="formula1Content">
+            <a href="sport/sport.php">
+                <img src="https://m4sport.hu/wp-content/uploads/sites/10/2017/12/Az-uj-f1-logo.jpg " alt="">
+                <figcaption>Formula 1</figcaption>
+            </a>
+        </div>
+    </div>
+
+
+    <script>
+        // JavaScript kódrészlet a rotáció beállítására
+        function setRotation() {
+            const screenWidth = window.innerWidth;
+            const rotationAngle = screenWidth * 0.007; // Változtathatod az arányt
+
+            const rotatableLine = document.getElementById('rotatableLine');
+            rotatableLine.style.transform = `translateX(-50%) rotate(${rotationAngle}deg)`;
+        }
+
+        // Az oldal betöltésekor és az ablak méretváltozásakor is beállítjuk a rotációt
+        window.addEventListener('load', setRotation);
+        window.addEventListener('resize', setRotation);
+    </script>
+
+</body>
+
+</html>
